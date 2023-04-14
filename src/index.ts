@@ -1,0 +1,19 @@
+import express, { NextFunction, Request, Response } from 'express';
+import dotenv from 'dotenv';
+import exampleRoutes from './routes/example.routes';
+import exampleMiddleware from './middlewares/example.middleware';
+
+dotenv.config();
+
+const app = express();
+const port = process.env.PORT;
+
+app.get("/", (req: Request, res: Response, next: NextFunction) => {
+  return res.send("Express with Typescript")
+})
+
+app.use("/blogs", exampleMiddleware, exampleRoutes);
+
+app.listen(port, () => {
+  console.log(`Server is running`);
+});
