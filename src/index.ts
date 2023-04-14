@@ -12,7 +12,7 @@ app.get("/", (req: Request, res: Response, next: NextFunction) => {
   return res.send("Express with Typescript")
 })
 
-app.use("/blogs", exampleMiddleware, exampleRoutes);
+app.use("/example", exampleMiddleware, exampleRoutes);
 
 app.listen(port, () => {
   console.log(`Server is running`);

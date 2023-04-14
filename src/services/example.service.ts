@@ -4,17 +4,13 @@ interface ServiceResult {
   error?: Error
 }
 
-export class ExampleService {
-
-  static exampleService(someParam: any): ServiceResult {
-    return {
-      rowCount: 1,
-      rows: [
-        {
-          id: 1
-        }
-      ]
-    };
-  }
-
+export function exampleService(someParam: any): ServiceResult {
+  return {
+    rowCount: 1,
+    rows: [
+      {
+        id: 1
+      }
+    ]
+  };
 }
