@@ -1,10 +1,6 @@
-interface ServiceResult {
-  rowCount?: number,
-  rows?: {[key: string]: any}[]
-  error?: Error
-}
+import { ServiceResult } from "../models/serviceResult.model";
 
-export function exampleService(someParam: any): ServiceResult {
+export function exampleServiceFunction(someParam: any): ServiceResult {
   return {
     rowCount: 1,
     rows: [

@@ -8,12 +8,12 @@ dotenv.config();
 const app = express();
 const port = process.env.PORT;
 
-app.get("/", (req: Request, res: Response, next: NextFunction) => {
-  return res.send("Express with Typescript")
-})
+app.get("/", (req: Request, res: Response) => {
+  return res.send("Express with Typescript");
+});
 
 app.use("/example", exampleMiddleware, exampleRoutes);
 
 app.listen(port, () => {
-  console.log(`Server is running`);
+  console.log(`Server is running at http://localhost:${port}`);
 });
